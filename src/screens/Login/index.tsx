@@ -9,25 +9,23 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {Colors} from '../../utils/color.ts';
 import {PrimaryButton} from '../../components/buttons/PrimaryButton.tsx';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {
+  ValidatePassword,
+  ValidatePhone,
+} from '../../functions/ErrorHandling.ts';
+
+type RootStackParamList = {
+  ForgotPassword: undefined;
+};
 
 const LoginScreen = ({}) => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const creteSchema = Yup.object().shape({
-    phone: Yup.string()
-      .typeError('Debe ser un número')
-      .matches(
-        /^\d{10}$/,
-        'El número de teléfono debe tener exactamente 10 dígitos',
-      )
-      .required('Teléfono requerido'),
-    password: Yup.string()
-      .required('Contraseña requerida')
-      .matches(/[0-9]/, 'Debe contener al menos un número')
-      .matches(/[a-zA-Z]/, 'Debe contener al menos un caracter')
-      .matches(
-        /[!@#$%^&*(),.?":{}|<>]/,
-        'Debe contener al menos un carácter especial',
-      )
-      .min(8, 'Debe tener al menos 8 caracteres'),
+    phone: ValidatePhone(),
+    password: ValidatePassword(),
   });
 
   return (
@@ -79,7 +77,9 @@ const LoginScreen = ({}) => {
                   styles={typography.error}
                 />
               )}
-              <Pressable style={loginStyles.containerForgotPassword}>
+              <Pressable
+                style={loginStyles.containerForgotPassword}
+                onPress={() => navigation.navigate('ForgotPassword')}>
                 <PrincipalText
                   text={'¿Olvidó su contraseña?'}
                   styles={loginStyles.textForgotPassword}

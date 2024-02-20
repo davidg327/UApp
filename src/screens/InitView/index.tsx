@@ -6,13 +6,11 @@ import {PrimaryButton} from '../../components/buttons/PrimaryButton.tsx';
 import {Colors} from '../../utils/color.ts';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-export interface IInitView {}
-
 type RootStackParamList = {
   Login: undefined;
 };
 
-const InitViewScreen: React.FC<IInitView> = ({}) => {
+const InitViewScreen = ({}) => {
   const navigate =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
