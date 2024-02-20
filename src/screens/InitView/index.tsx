@@ -4,11 +4,17 @@ import initViewStyles from './styles.tsx';
 import {useNavigation} from '@react-navigation/native';
 import {PrimaryButton} from '../../components/buttons/PrimaryButton.tsx';
 import {Colors} from '../../utils/color.ts';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 export interface IInitView {}
 
+type RootStackParamList = {
+  Login: undefined;
+};
+
 const InitViewScreen: React.FC<IInitView> = ({}) => {
-  const navigate = useNavigation();
+  const navigate =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <SafeAreaView style={initViewStyles.container}>
       <Image
@@ -20,7 +26,7 @@ const InitViewScreen: React.FC<IInitView> = ({}) => {
           text={'Iniciar sesión'}
           backgroundColor={Colors.primary}
           disabled={false}
-          action={() => console.log('joa')}
+          action={() => navigate.navigate('Login')}
         />
       </View>
       <View style={initViewStyles.containerButton}>

@@ -15,7 +15,7 @@ const initViewStyles = StyleSheet.create({
   },
   containerButton: {
     marginBottom: '10%',
-    width: '60%',
+    width: '50%',
   },
 });
 
