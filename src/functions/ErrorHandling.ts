@@ -26,3 +26,15 @@ export function ValidateToken() {
     .matches(/^\d{6}$/, 'El token debe tener exactamente 6 dígitos')
     .required('Token requerido');
 }
+
+export function ValidateName() {
+  return Yup.string().required('Nombre requerido');
+}
+
+export function ValidateDocument() {
+  return Yup.string().required('Documento requerido');
+}
+
+export function ValidateTypeDocument() {
+  return Yup.string().required('Tipo de documento requerido');
+}
