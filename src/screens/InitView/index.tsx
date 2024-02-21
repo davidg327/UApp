@@ -8,6 +8,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 type RootStackParamList = {
   Login: undefined;
+  Register: undefined;
 };
 
 const InitViewScreen = ({}) => {
@@ -32,7 +33,7 @@ const InitViewScreen = ({}) => {
           text={'Registrarse'}
           backgroundColor={Colors.second}
           disabled={false}
-          action={() => console.log('joa')}
+          action={() => navigate.navigate('Register')}
         />
       </View>
     </SafeAreaView>
