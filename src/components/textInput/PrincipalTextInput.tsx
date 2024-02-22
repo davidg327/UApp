@@ -36,15 +36,16 @@ export const PrincipalTextInput: React.FC<IPrincipalTextInput> = ({
       mode={mode}
       style={style}
       keyboardType={keyboard}
-      outlineColor={Colors.third}
+      outlineColor={Colors.text}
       theme={{
         colors: {
-          primary: Colors.third,
+          primary: Colors.text,
           error: Colors.negativeLight,
+          text: Colors.primary,
         },
       }}
+      textColor={Colors.primary}
       secureTextEntry={security}
-      placeholderTextColor={'black'}
       left={<TextInput.Icon icon={nameIcon} />}
       error={error}
     />

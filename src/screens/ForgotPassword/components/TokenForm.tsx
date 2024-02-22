@@ -55,7 +55,7 @@ export const TokenForm: React.FC<ITokenForm> = ({setChangeView}) => {
               <View style={componentsForgotPasswordStyle.containerButton}>
                 <PrimaryButton
                   text={'Validar token'}
-                  backgroundColor={Colors.third}
+                  backgroundColor={Colors.primary}
                   disabled={false}
                   action={() => handleSubmit()}
                 />

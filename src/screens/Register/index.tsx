@@ -89,19 +89,20 @@ const RegisterScreen = ({}) => {
                   borderColor:
                     errors?.type_document && touched?.type_document
                       ? Colors.negative
-                      : Colors.third,
+                      : Colors.text,
                 }}
                 placeholderStyle={{
                   color:
                     errors?.type_document && touched?.type_document
                       ? Colors.negative
-                      : 'black',
+                      : Colors.text,
                 }}
                 selectedValue={values.type_document}
                 onValueChange={(value: any) =>
                   setFieldValue('type_document', value)
                 }
-                primaryColor={'green'}
+                selectedItemStyle={{color: Colors.primary}}
+                primaryColor={Colors.primary}
               />
               {errors?.type_document && touched?.type_document && (
                 <PrincipalText

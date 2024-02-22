@@ -57,7 +57,7 @@ export const PhoneForm: React.FC<IPhoneForm> = ({setChangeView}) => {
               <View style={componentsForgotPasswordStyle.containerButton}>
                 <PrimaryButton
                   text={'Validar teléfono'}
-                  backgroundColor={Colors.third}
+                  backgroundColor={Colors.primary}
                   disabled={false}
                   action={() => handleSubmit()}
                 />

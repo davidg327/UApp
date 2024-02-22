@@ -65,7 +65,7 @@ export const ResetForm: React.FC<IResetForm> = ({setChangeView}) => {
               <View style={componentsForgotPasswordStyle.containerButton}>
                 <PrimaryButton
                   text={'Cambiar contraseña'}
-                  backgroundColor={Colors.third}
+                  backgroundColor={Colors.primary}
                   disabled={false}
                   action={() => handleSubmit()}
                 />
