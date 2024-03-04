@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {Colors} from '../../utils/color.ts';
+import {fontFamily} from '../../utils/fonts.ts';
 
 const buttonsStyles = StyleSheet.create({
   containerPrimary: {
@@ -10,7 +11,7 @@ const buttonsStyles = StyleSheet.create({
     textAlign: 'center',
     color: Colors.white,
     fontSize: 14,
-    fontWeight: 'bold',
+    fontFamily: fontFamily.fontFamilyBold,
   },
 });
 

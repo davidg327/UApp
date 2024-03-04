@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {Colors} from '../../utils/color.ts';
+import {fontFamily} from '../../utils/fonts.ts';
 
 const loginStyles = StyleSheet.create({
   container: {
@@ -30,7 +31,7 @@ const loginStyles = StyleSheet.create({
   textForgotPassword: {
     textAlign: 'right',
     fontSize: 14,
-    fontWeight: '600',
+    fontFamily: fontFamily.fontFamilySemiBold,
     color: Colors.text,
   },
   containerButton: {

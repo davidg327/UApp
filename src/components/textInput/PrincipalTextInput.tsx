@@ -2,6 +2,7 @@ import React from 'react';
 import {TextInput} from 'react-native-paper';
 import {KeyboardTypeOptions, StyleProp, ViewStyle} from 'react-native';
 import {Colors} from '../../utils/color.ts';
+import {fontFamily} from '../../utils/fonts.ts';
 
 export interface IPrincipalTextInput {
   value: string;
@@ -35,13 +36,13 @@ export const PrincipalTextInput: React.FC<IPrincipalTextInput> = ({
       onChangeText={text => change(valueChange, text)}
       mode={mode}
       style={style}
+      contentStyle={{fontFamily: fontFamily.fontFamilyRegular}}
       keyboardType={keyboard}
       outlineColor={Colors.text}
       theme={{
         colors: {
           primary: Colors.text,
           error: Colors.negativeLight,
-          text: Colors.primary,
         },
       }}
       textColor={Colors.primary}

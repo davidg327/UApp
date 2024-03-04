@@ -17,6 +17,7 @@ import {PrincipalTextInput} from '../../components/textInput/PrincipalTextInput.
 import Dropdown from 'react-native-input-select';
 import {PrimaryButton} from '../../components/buttons/PrimaryButton.tsx';
 import {Colors} from '../../utils/color.ts';
+import {fontFamily} from '../../utils/fonts.ts';
 
 const RegisterScreen = ({}) => {
   const creteSchema = Yup.object().shape({
@@ -96,12 +97,16 @@ const RegisterScreen = ({}) => {
                     errors?.type_document && touched?.type_document
                       ? Colors.negative
                       : Colors.text,
+                  fontSize: 14,
                 }}
                 selectedValue={values.type_document}
                 onValueChange={(value: any) =>
                   setFieldValue('type_document', value)
                 }
-                selectedItemStyle={{color: Colors.primary}}
+                selectedItemStyle={{
+                  color: Colors.primary,
+                  fontFamily: fontFamily.fontFamilyRegular,
+                }}
                 primaryColor={Colors.primary}
               />
               {errors?.type_document && touched?.type_document && (
