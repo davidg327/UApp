@@ -18,6 +18,13 @@ import Dropdown from 'react-native-input-select';
 import {PrimaryButton} from '../../components/buttons/PrimaryButton.tsx';
 import {Colors} from '../../utils/color.ts';
 import {fontFamily} from '../../utils/fonts.ts';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import CalendarsComponent from '../../components/calendar/calendars.tsx';
+
+type RootStackParamList = {
+  Calendar: undefined;
+};
 
 const RegisterScreen = ({}) => {
   const creteSchema = Yup.object().shape({
@@ -27,6 +34,13 @@ const RegisterScreen = ({}) => {
     document: ValidateDocument(),
     password: ValidatePassword(),
   });
+
+  const navigate =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
+  const handleRegister = (values: any) => {
+    console.log(values, 'test');
+  };
 
   return (
     <SafeAreaView style={registerStyles.container}>
@@ -46,9 +60,10 @@ const RegisterScreen = ({}) => {
             type_document: '',
             document: '',
             password: '',
+            birthday: '',
           }}
-          validationSchema={creteSchema}
-          onSubmit={values => console.log(values)}>
+          //validationSchema={creteSchema}
+          onSubmit={values => handleRegister(values)}>
           {({errors, touched, handleSubmit, values, setFieldValue}) => (
             <View>
               <PrincipalTextInput
@@ -150,6 +165,12 @@ const RegisterScreen = ({}) => {
                   styles={typography.error}
                 />
               )}
+              <CalendarsComponent
+                valueChange={'birthday'}
+                change={setFieldValue}
+                style={registerStyles.textInput}
+                error={!!errors?.birthday && touched?.birthday}
+              />
               <View style={registerStyles.containerButton}>
                 <PrimaryButton
                   text={'Crear cuenta'}
