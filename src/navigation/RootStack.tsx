@@ -5,6 +5,7 @@ import InitViewScreen from '../screens/InitView';
 import LoginScreen from '../screens/Login';
 import ForgotPasswordScreen from '../screens/ForgotPassword';
 import RegisterScreen from '../screens/Register';
+import TabStack from "./TabStack.tsx";
 
 export const RootStack = ({}) => {
   const Stack = createNativeStackNavigator();
@@ -30,6 +31,11 @@ export const RootStack = ({}) => {
           name={'Register'}
           component={RegisterScreen}
           options={{headerShown: false}}
+        />
+        <Stack.Screen
+            name={'Home'}
+            component={TabStack}
+            options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>

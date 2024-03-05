@@ -23,7 +23,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import CalendarsComponent from '../../components/calendar/calendars.tsx';
 
 type RootStackParamList = {
-  Calendar: undefined;
+  Home: undefined;
 };
 
 const RegisterScreen = ({}) => {
@@ -40,6 +40,7 @@ const RegisterScreen = ({}) => {
 
   const handleRegister = (values: any) => {
     console.log(values, 'test');
+    navigate.navigate('Home');
   };
 
   return (
