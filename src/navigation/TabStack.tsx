@@ -30,29 +30,32 @@ const TabStack = ({}) => {
         }}
         onPress={() => navigate(routeName)}>
         {routeName === 'ProfileTab' && (
-            <Image
-                source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/480px-User_icon_2.svg.png'}}
-                style={{width: 40, height: 40}}
-            />
+          <Image
+            source={{
+              uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/480px-User_icon_2.svg.png',
+            }}
+            style={{width: 40, height: 40}}
+          />
         )}
         {routeName !== 'ProfileTab' && (
-            <View style={{
-                alignItems: 'center',
+          <View
+            style={{
+              alignItems: 'center',
             }}>
-                <IconAwesome
-                    name={iconName}
-                    size={20}
-                    color={selectedTab === routeName ? Colors.white : Colors.gray}
-                />
-                <PrincipalText
-                    text={name}
-                    styles={{
-                        color: selectedTab === routeName ? Colors.white : Colors.gray,
-                        fontFamily: fontFamily.fontFamilySemiBold,
-                        fontSize: 15,
-                    }}
-                />
-            </View>
+            <IconAwesome
+              name={iconName}
+              size={20}
+              color={selectedTab === routeName ? Colors.white : Colors.gray}
+            />
+            <PrincipalText
+              text={name}
+              styles={{
+                color: selectedTab === routeName ? Colors.white : Colors.gray,
+                fontFamily: fontFamily.fontFamilySemiBold,
+                fontSize: 15,
+              }}
+            />
+          </View>
         )}
       </Pressable>
     );
