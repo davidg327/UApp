@@ -2,7 +2,7 @@ import * as React from 'react';
 import IconAwesome from 'react-native-vector-icons/FontAwesome5';
 import HomeScreen from '../screens/Home';
 import {Colors} from '../utils/color.ts';
-import {Pressable} from 'react-native';
+import {Image, Pressable, View} from 'react-native';
 import {PrincipalText} from '../components/texts/PrincipalText.tsx';
 import {fontFamily} from '../utils/fonts.ts';
 import {CurvedBottomBar} from 'react-native-curved-bottom-bar';
@@ -20,9 +20,6 @@ const TabStack = ({}) => {
     } else if (routeName === 'TrophyTab') {
       iconName = 'trophy';
       name = 'Premios';
-    } else if (routeName === 'ProfileTab') {
-      iconName = 'user-alt';
-      name = 'Perfil';
     }
     return (
       <Pressable
@@ -32,19 +29,31 @@ const TabStack = ({}) => {
           marginLeft: routeName === 'TrophyTab' ? 15 : 0,
         }}
         onPress={() => navigate(routeName)}>
-        <IconAwesome
-          name={iconName}
-          size={20}
-          color={selectedTab === routeName ? Colors.white : Colors.gray}
-        />
-        <PrincipalText
-          text={name}
-          styles={{
-            color: selectedTab === routeName ? Colors.white : Colors.gray,
-            fontFamily: fontFamily.fontFamilySemiBold,
-            fontSize: 15,
-          }}
-        />
+        {routeName === 'ProfileTab' && (
+            <Image
+                source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/480px-User_icon_2.svg.png'}}
+                style={{width: 40, height: 40}}
+            />
+        )}
+        {routeName !== 'ProfileTab' && (
+            <View style={{
+                alignItems: 'center',
+            }}>
+                <IconAwesome
+                    name={iconName}
+                    size={20}
+                    color={selectedTab === routeName ? Colors.white : Colors.gray}
+                />
+                <PrincipalText
+                    text={name}
+                    styles={{
+                        color: selectedTab === routeName ? Colors.white : Colors.gray,
+                        fontFamily: fontFamily.fontFamilySemiBold,
+                        fontSize: 15,
+                    }}
+                />
+            </View>
+        )}
       </Pressable>
     );
   };
