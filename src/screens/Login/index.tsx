@@ -18,6 +18,7 @@ import {
 
 type RootStackParamList = {
   ForgotPassword: undefined;
+  Home: undefined;
 };
 
 const LoginScreen = ({}) => {
@@ -27,6 +28,11 @@ const LoginScreen = ({}) => {
     phone: ValidatePhone(),
     password: ValidatePassword(),
   });
+
+  const redirect = (values: any) => {
+    console.log(values);
+    navigation.navigate('Home');
+  };
 
   return (
     <SafeAreaView style={loginStyles.container}>
@@ -42,7 +48,7 @@ const LoginScreen = ({}) => {
         <Formik
           initialValues={{phone: '', password: ''}}
           validationSchema={creteSchema}
-          onSubmit={values => console.log(values)}>
+          onSubmit={values => redirect(values)}>
           {({errors, touched, handleSubmit, values, setFieldValue}) => (
             <View>
               <PrincipalTextInput

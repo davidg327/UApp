@@ -5,12 +5,13 @@ import InitViewScreen from '../screens/InitView';
 import LoginScreen from '../screens/Login';
 import ForgotPasswordScreen from '../screens/ForgotPassword';
 import RegisterScreen from '../screens/Register';
-import TabStack from "./TabStack.tsx";
+import TabStack from './TabStack.tsx';
 
 export const RootStack = ({}) => {
   const Stack = createNativeStackNavigator();
+  const navigationRef = React.createRef();
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator initialRouteName={'InitView'}>
         <Stack.Screen
           name="InitView"
@@ -33,9 +34,9 @@ export const RootStack = ({}) => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-            name={'Home'}
-            component={TabStack}
-            options={{headerShown: false}}
+          name={'Home'}
+          component={TabStack}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
