@@ -4,11 +4,11 @@ import styles from './styles.tsx';
 import {PrincipalText} from '../../../components/texts/PrincipalText.tsx';
 import LinearGradient from 'react-native-linear-gradient';
 
-interface IBlogs {
+interface IMoreInfo {
   item: any;
 }
 
-export const Blogs: React.FC<IBlogs> = ({item}) => {
+export const MoreInfo: React.FC<IMoreInfo> = ({item}) => {
   return (
     <View style={styles.container}>
       <ImageBackground

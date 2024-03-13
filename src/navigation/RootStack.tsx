@@ -7,7 +7,7 @@ import ForgotPasswordScreen from '../screens/ForgotPassword';
 import RegisterScreen from '../screens/Register';
 import TabStack from './TabStack.tsx';
 import MapScreen from '../screens/Map';
-import BlogScreen from '../screens/Blog';
+import MoreInfoScreen from '../screens/MoreInfo';
 
 export const RootStack = ({}) => {
   const Stack = createNativeStackNavigator();
@@ -46,8 +46,8 @@ export const RootStack = ({}) => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name={'Blog'}
-          component={BlogScreen}
+          name={'MoreInfo'}
+          component={MoreInfoScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
