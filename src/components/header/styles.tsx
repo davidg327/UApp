@@ -8,8 +8,17 @@ const styles = StyleSheet.create({
     height: '7%',
     backgroundColor: Colors.second,
   },
+  icon: {
+    position: 'absolute',
+    left: '5%',
+    top: '30%',
+    zIndex: 1,
+  },
   title: {
     textAlign: 'center',
+    top: '30%',
+    color: Colors.white,
+    fontFamily: fontFamily.fontFamilySemiBold,
   },
   image: {
     width: 30,

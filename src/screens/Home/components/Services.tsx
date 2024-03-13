@@ -1,13 +1,23 @@
 import React from 'react';
-import {Image, View} from 'react-native';
+import {Image, Pressable, View} from 'react-native';
 import styles from './styles.tsx';
 import {PrincipalText} from '../../../components/texts/PrincipalText.tsx';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 interface IServices {}
 
+type RootStackParamList = {
+  Map: undefined;
+};
+
 export const Services: React.FC<IServices> = ({}) => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
-    <View style={styles.cardService}>
+    <Pressable
+      style={styles.cardService}
+      onPress={() => navigation.navigate('Map')}>
       <Image
         source={{
           uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1200px-User_icon_2.svg.png',
@@ -29,6 +39,6 @@ export const Services: React.FC<IServices> = ({}) => {
           styles={styles.textServiceState}
         />
       </View>
-    </View>
+    </Pressable>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, View} from 'react-native';
+import {Pressable, SafeAreaView, ScrollView, View} from 'react-native';
 import {HeaderComponent} from '../../components/header/Header.tsx';
 import styles from './styles.tsx';
 import {PrincipalText} from '../../components/texts/PrincipalText.tsx';
@@ -7,7 +7,9 @@ import {FlatListComponent} from '../../components/flatList/flatList.tsx';
 import {Incentives} from './components/Incentives.tsx';
 import {Services} from './components/Services.tsx';
 import {Blogs} from './components/Blogs.tsx';
-import {Tips} from "./components/Tips.tsx";
+import {Tips} from './components/Tips.tsx';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 const incentives = [
   {
@@ -48,7 +50,13 @@ const blogs = [
   },
 ];
 
+type RootStackParamList = {
+  Blog: undefined;
+};
+
 const HomeScreen = ({}) => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const renderItemIncentives = (item: any) => {
     return <Incentives item={item.item} />;
   };
@@ -79,7 +87,9 @@ const HomeScreen = ({}) => {
         <Services />
         <View style={styles.containerRow}>
           <PrincipalText text={'Blogs'} styles={styles.title} />
-          <PrincipalText text={'Ver más'} styles={styles.more} />
+          <Pressable onPress={() => navigation.navigate('Blog')}>
+            <PrincipalText text={'Ver más'} styles={styles.more} />
+          </Pressable>
         </View>
         <FlatListComponent
           data={blogs}
