@@ -8,13 +8,12 @@ interface IBlogs {
   item: any;
 }
 
-export const Blogs: React.FC<IBlogs> = ({item}) => {
+export const Blogs = ({item}: IBlogs) => {
   return (
     <ImageBackground
       source={{uri: item.image}}
       style={styles.imageBlog}
-      imageStyle={styles.imageBlog}
-      >
+      imageStyle={styles.imageBlog}>
       <LinearGradient
         colors={['rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 0.5)']}
         start={{x: 0, y: 0}}

@@ -9,7 +9,7 @@ import {ResetForm} from './components/ResetForm.tsx';
 
 export interface IForgotPassword {}
 
-const ForgotPasswordScreen: React.FC<IForgotPassword> = ({}) => {
+const ForgotPasswordScreen = ({}: IForgotPassword) => {
   const [changeView, setChangeView] = useState('PhoneForm');
   return (
     <SafeAreaView style={forgotPasswordStyles.container}>

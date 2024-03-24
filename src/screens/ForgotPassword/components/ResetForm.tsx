@@ -16,7 +16,7 @@ export interface IResetForm {
   setChangeView: (changeView: string) => void;
 }
 
-export const ResetForm: React.FC<IResetForm> = ({setChangeView}) => {
+export const ResetForm = ({setChangeView}: IResetForm) => {
   const navigation = useNavigation();
 
   const creteSchema = Yup.object().shape({

@@ -11,7 +11,7 @@ interface IHeader {
   goBack?: () => void;
 }
 
-export const HeaderComponent: React.FC<IHeader> = ({text, points, goBack}) => {
+export const HeaderComponent = ({text, points, goBack}: IHeader) => {
   return (
     <View style={styles.container}>
       {goBack && (

@@ -69,8 +69,8 @@ const TabStack = ({}) => {
       screenOptions={{headerShown: false}}
       initialRouteName="HomeTab"
       borderTopLeftRight
-      renderCircle={() => (
-        <Pressable style={{marginTop: -20}}>
+      renderCircle={({navigate}) => (
+        <Pressable style={{marginTop: -20}} onPress={() => navigate('Order')}>
           <IconAwesome name={'plus-circle'} size={40} color={Colors.second} />
         </Pressable>
       )}

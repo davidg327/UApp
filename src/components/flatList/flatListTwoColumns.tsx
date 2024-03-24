@@ -6,9 +6,11 @@ interface IFlatListTwoColumnsComponent {
   render: any;
   style?: ViewStyle;
 }
-export const FlatListTwoColumnsComponent: React.FC<
-  IFlatListTwoColumnsComponent
-> = ({data, render, style}) => {
+export const FlatListTwoColumnsComponent = ({
+  data,
+  render,
+  style,
+}: IFlatListTwoColumnsComponent) => {
   return (
     <FlatList
       data={data}

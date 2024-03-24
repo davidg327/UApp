@@ -6,7 +6,7 @@ interface ITips {
   item: any;
 }
 
-export const Tips: React.FC<ITips> = ({item}) => {
+export const Tips = ({item}: ITips) => {
   return (
     <ImageBackground
       source={{uri: item.image}}

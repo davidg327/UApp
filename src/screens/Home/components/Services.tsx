@@ -11,7 +11,7 @@ type RootStackParamList = {
   Map: undefined;
 };
 
-export const Services: React.FC<IServices> = ({}) => {
+export const Services= ({}: IServices) => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (

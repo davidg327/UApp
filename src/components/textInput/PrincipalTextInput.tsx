@@ -17,7 +17,7 @@ export interface IPrincipalTextInput {
   error: boolean | undefined;
 }
 
-export const PrincipalTextInput: React.FC<IPrincipalTextInput> = ({
+export const PrincipalTextInput= ({
   value,
   valueChange,
   change,
@@ -28,7 +28,7 @@ export const PrincipalTextInput: React.FC<IPrincipalTextInput> = ({
   security,
   keyboard,
   error,
-}) => {
+}: IPrincipalTextInput) => {
   return (
     <TextInput
       label={label}

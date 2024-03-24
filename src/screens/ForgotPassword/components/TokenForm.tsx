@@ -15,7 +15,7 @@ export interface ITokenForm {
   setChangeView: (changeView: string) => void;
 }
 
-export const TokenForm: React.FC<ITokenForm> = ({setChangeView}) => {
+export const TokenForm = ({setChangeView}: ITokenForm) => {
   const creteSchema = Yup.object().shape({
     token: ValidateToken(),
   });

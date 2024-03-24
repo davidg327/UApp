@@ -8,6 +8,7 @@ import RegisterScreen from '../screens/Register';
 import TabStack from './TabStack.tsx';
 import MapScreen from '../screens/Map';
 import MoreInfoScreen from '../screens/MoreInfo';
+import OrderScreen from '../screens/Order';
 
 export const RootStack = ({}) => {
   const Stack = createNativeStackNavigator();
@@ -48,6 +49,11 @@ export const RootStack = ({}) => {
         <Stack.Screen
           name={'MoreInfo'}
           component={MoreInfoScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={'Order'}
+          component={OrderScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

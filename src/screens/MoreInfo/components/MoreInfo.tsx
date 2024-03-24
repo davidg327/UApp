@@ -8,7 +8,7 @@ interface IMoreInfo {
   item: any;
 }
 
-export const MoreInfo: React.FC<IMoreInfo> = ({item}) => {
+export const MoreInfo = ({item}: IMoreInfo) => {
   return (
     <View style={styles.container}>
       <ImageBackground

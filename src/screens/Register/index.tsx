@@ -14,13 +14,13 @@ import {
   ValidateTypeDocument,
 } from '../../functions/ErrorHandling.ts';
 import {PrincipalTextInput} from '../../components/textInput/PrincipalTextInput.tsx';
-import Dropdown from 'react-native-input-select';
 import {PrimaryButton} from '../../components/buttons/PrimaryButton.tsx';
 import {Colors} from '../../utils/color.ts';
-import {fontFamily} from '../../utils/fonts.ts';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import CalendarsComponent from '../../components/calendar/calendars.tsx';
+import {InputSelectComponent} from '../../components/inputSelect/InputSelectComponent.tsx';
+import {fontFamily} from '../../utils/fonts.ts';
 
 type RootStackParamList = {
   Home: undefined;
@@ -63,7 +63,7 @@ const RegisterScreen = ({}) => {
             password: '',
             birthday: '',
           }}
-          //validationSchema={creteSchema}
+          validationSchema={creteSchema}
           onSubmit={values => handleRegister(values)}>
           {({errors, touched, handleSubmit, values, setFieldValue}) => (
             <View>
@@ -95,9 +95,9 @@ const RegisterScreen = ({}) => {
               {errors?.phone && touched?.phone && (
                 <PrincipalText text={errors.phone} styles={typography.error} />
               )}
-              <Dropdown
-                placeholder="Tipo de documento"
-                options={[
+              <InputSelectComponent
+                placeHolder={'Tipo de documento'}
+                items={[
                   {label: 'Cédula de ciudadania', value: 'CC'},
                   {label: 'Tarjeta de identidad', value: 'TI'},
                 ]}
@@ -115,15 +115,15 @@ const RegisterScreen = ({}) => {
                       : Colors.text,
                   fontSize: 14,
                 }}
-                selectedValue={values.type_document}
-                onValueChange={(value: any) =>
+                value={values.type_document}
+                onChange={(value: number) =>
                   setFieldValue('type_document', value)
                 }
-                selectedItemStyle={{
+                selectStyle={{
                   color: Colors.primary,
                   fontFamily: fontFamily.fontFamilyRegular,
                 }}
-                primaryColor={Colors.primary}
+                color={Colors.primary}
               />
               {errors?.type_document && touched?.type_document && (
                 <PrincipalText
@@ -168,6 +168,7 @@ const RegisterScreen = ({}) => {
               )}
               <CalendarsComponent
                 valueChange={'birthday'}
+                label={'Cumpleaños'}
                 change={setFieldValue}
                 style={registerStyles.textInput}
                 error={!!errors?.birthday && touched?.birthday}

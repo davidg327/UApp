@@ -11,13 +11,13 @@ export interface IPrimaryButton {
   children?: ReactNode;
 }
 
-export const PrimaryButton: React.FC<IPrimaryButton> = ({
+export const PrimaryButton = ({
   text,
   backgroundColor,
   disabled,
   action,
   children,
-}) => {
+}: IPrimaryButton) => {
   return (
     <Pressable
       disabled={disabled}

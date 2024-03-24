@@ -7,7 +7,7 @@ interface IIncentives {
   item: any;
 }
 
-export const Incentives: React.FC<IIncentives> = ({item}) => {
+export const Incentives = ({item}: IIncentives) => {
   return (
     <View style={styles.cardIncentive}>
       <Image

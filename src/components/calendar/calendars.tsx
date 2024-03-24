@@ -6,17 +6,13 @@ import {PrincipalTextInput} from '../textInput/PrincipalTextInput.tsx';
 
 export interface ICalendar {
   valueChange: string;
+  label: string;
   change: (value: any, text: string) => void;
   style: StyleProp<ViewStyle>;
   error: boolean | undefined;
 }
 
-const CalendarsComponent: React.FC<ICalendar> = ({
-  valueChange,
-  change,
-  style,
-  error,
-}) => {
+const CalendarsComponent = ({valueChange, change, style, error, label}: ICalendar) => {
   return (
     <DateTimePicker
       mode={'date'}
@@ -29,7 +25,7 @@ const CalendarsComponent: React.FC<ICalendar> = ({
               valueChange={valueChange}
               change={change}
               style={style}
-              label={'Cumpleaños'}
+              label={label}
               mode={'outlined'}
               nameIcon={'calendar'}
               keyboard={'default'}

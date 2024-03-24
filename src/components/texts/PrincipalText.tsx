@@ -6,6 +6,6 @@ export interface IPrincipalText {
   styles: StyleProp<TextStyle>;
 }
 
-export const PrincipalText: React.FC<IPrincipalText> = ({text, styles}) => {
+export const PrincipalText= ({text, styles}: IPrincipalText) => {
   return <Text style={styles}>{text}</Text>;
 };

@@ -10,10 +10,7 @@ interface IMoreInfoScreen {
   route: any;
 }
 
-const MoreInfoScreen = ({
-  route,
-}: IMoreInfoScreen) => {
-
+const MoreInfoScreen = ({route}: IMoreInfoScreen) => {
   const {items, title} = route.params;
 
   const navigation = useNavigation();
@@ -26,10 +23,7 @@ const MoreInfoScreen = ({
     <View style={styles.container}>
       <HeaderComponent text={title} goBack={() => navigation.goBack()} />
       <View style={styles.containerCards}>
-        <FlatListTwoColumnsComponent
-            data={items}
-            render={renderItemMoreInfo}
-        />
+        <FlatListTwoColumnsComponent data={items} render={renderItemMoreInfo} />
       </View>
     </View>
   );

@@ -15,7 +15,7 @@ export interface IPhoneForm {
   setChangeView: (changeView: string) => void;
 }
 
-export const PhoneForm: React.FC<IPhoneForm> = ({setChangeView}) => {
+export const PhoneForm = ({setChangeView}: IPhoneForm) => {
   const creteSchema = Yup.object().shape({
     phone: ValidatePhone(),
   });

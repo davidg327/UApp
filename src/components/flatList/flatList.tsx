@@ -7,12 +7,12 @@ interface IFlatListComponent {
   horizontal: boolean;
   style?: ViewStyle;
 }
-export const FlatListComponent: React.FC<IFlatListComponent> = ({
+export const FlatListComponent = ({
   data,
   render,
   horizontal,
   style,
-}) => {
+}: IFlatListComponent) => {
   return (
     <FlatList
       data={data}

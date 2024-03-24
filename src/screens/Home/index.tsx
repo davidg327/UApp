@@ -93,7 +93,10 @@ const HomeScreen = ({}) => {
         <Services />
         <View style={styles.containerRow}>
           <PrincipalText text={'Blogs'} styles={styles.title} />
-          <Pressable onPress={() => navigation.navigate('MoreInfo', {items: blogs, title: 'Blogs'})}>
+          <Pressable
+            onPress={() =>
+              navigation.navigate('MoreInfo', {items: blogs, title: 'Blogs'})
+            }>
             <PrincipalText text={'Ver más'} styles={styles.more} />
           </Pressable>
         </View>
@@ -105,7 +108,10 @@ const HomeScreen = ({}) => {
         />
         <View style={styles.containerRow}>
           <PrincipalText text={'Tips'} styles={styles.title} />
-          <Pressable onPress={() => navigation.navigate('MoreInfo', {items: blogs, title: 'Tips'})}>
+          <Pressable
+            onPress={() =>
+              navigation.navigate('MoreInfo', {items: blogs, title: 'Tips'})
+            }>
             <PrincipalText text={'Ver más'} styles={styles.more} />
           </Pressable>
         </View>
