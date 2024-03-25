@@ -6,6 +6,7 @@ import {Image, Pressable, View} from 'react-native';
 import {PrincipalText} from '../components/texts/PrincipalText.tsx';
 import {fontFamily} from '../utils/fonts.ts';
 import {CurvedBottomBar} from 'react-native-curved-bottom-bar';
+import ProfileScreen from '../screens/Profile';
 
 const TabStack = ({}) => {
   const renderTabBar = ({routeName, selectedTab, navigate}: any) => {
@@ -92,7 +93,7 @@ const TabStack = ({}) => {
       />
       <CurvedBottomBar.Screen
         name="ProfileTab"
-        component={() => <HomeScreen />}
+        component={() => <ProfileScreen />}
         position="RIGHT"
       />
     </CurvedBottomBar.Navigator>

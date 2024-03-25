@@ -8,4 +8,5 @@ export const Colors = {
   black: '#17202A',
   gray: '#B2B2B2',
   card: '#3f3f3f',
+  orange: '#ff7f00',
 };

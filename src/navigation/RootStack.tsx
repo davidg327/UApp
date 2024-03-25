@@ -9,6 +9,7 @@ import TabStack from './TabStack.tsx';
 import MapScreen from '../screens/Map';
 import MoreInfoScreen from '../screens/MoreInfo';
 import OrderScreen from '../screens/Order';
+import ProfileScreen from '../screens/Profile';
 
 export const RootStack = ({}) => {
   const Stack = createNativeStackNavigator();
@@ -54,6 +55,11 @@ export const RootStack = ({}) => {
         <Stack.Screen
           name={'Order'}
           component={OrderScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={'Profile'}
+          component={ProfileScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
